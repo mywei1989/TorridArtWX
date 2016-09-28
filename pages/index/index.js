@@ -3,34 +3,18 @@
 var app = getApp()
 Page({
   data: {
-    //motto: 'Hello World',
-    //userInfo: {}
     collections : [],
     pageIndex:1
-  },
-
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
     console.log('onLoad');
     var self = this;
-    //调用应用实例的方法获取全局数据
-    /*app.getUserInfo(function(userInfo){
-      //更新数据
-      self.setData({
-        userInfo:userInfo
-      });
-    });*/
-
     self.getCollections(1);
   },
   getCollections:function(pageIndex){
     var self = this;
     var page = pageIndex || 1;
+    console.log('load:http://localhost:3001/page/'+page);
     wx.request({
       url: 'http://localhost:3001/page/'+page,
       header: {
@@ -55,11 +39,14 @@ Page({
 
   upper: function(){
     var self = this;
+    console.log('pullDownRefresh');
     self.getCollections(1);
   },
   lower:function(){
     var self = this;
+    
     var page = self.data.pageIndex + 1;
+    console.log('loadpage:'+page);
     self.getCollections(page);
   },
   previewImage:function(e){
@@ -69,6 +56,7 @@ Page({
     for(var i=0;i<self.data.collections.length;i++){
       urls.push(self.data.collections[i].preview);
     }
+    console.log(urls)
     wx.previewImage({
       current: current,
       urls: urls
