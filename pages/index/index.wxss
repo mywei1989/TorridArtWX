@@ -1,0 +1,28 @@
+/**index.wxss**/
+.container_wrap{
+
+  height: 100%;
+  background:#0b0c07;
+}
+
+.container_wrap .listview{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  width: 100%;
+  height: 200%;
+  justify-content: space-around;
+  box-sizing: border-box;
+  background:#0b0c07;
+}
+
+.thumbnail {
+  width: 330rpx;
+  height: 400rpx;
+  margin: 5rpx 0;
+} 
+.thumbnail image{
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+}

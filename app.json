@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle":"white",
+    "navigationBarTitleText": "每日看腿",
+    "backgroundColor":"#000",
+    "backgroundTextStyle":"white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

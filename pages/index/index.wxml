@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view class="container_wrap" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower">
+    <view class="listview">
+      <view class="thumbnail" wx:for="{{collections}}">
+          <image mode="scaleToFill" src="{{collections[index].thumbnail}}" bindtap="previewImage"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
